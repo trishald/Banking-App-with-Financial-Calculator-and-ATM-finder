@@ -10,6 +10,7 @@
 void gst(){
     system("clear");
     float oc,ga,gr,np;//original cost, gst amount, gst rate, net price
+    
     char o;//option
     int ch;//choice
     printf("                        GST Calculator\n");
@@ -45,6 +46,8 @@ if(ch==2)
 void cur_con()
 {
     int ch1,ch2;
+    char cur[][5]={"USD","POUNDS","EUROS","YUAN","INR"};
+    int i,j;
     float a,b,rat,ca; //rat=ratio ca=converted amount
     char c1[10],c2[10];
     system("clear");
@@ -64,24 +67,24 @@ void cur_con()
         case 1:
         {
         a=usd;
-        c1[]="usd";
+        i=1;
         }
         break;
         case 2:
         a=pou;
-        c1[]="pound";
+        i=2;
         break;
         case 3:
         a=eur;
-        c1[]="euro";
+        i=3;
         break;
         case 4:
         a=yuan;
-        c1[]="yuan";
+        i=4;
         break;
         case 5:
         a=inr;
-        c1[]="inr";
+        i=5;
         break;
         default:
         printf("wrong choice\n");
@@ -91,23 +94,19 @@ void cur_con()
     {
         case 1:
         b=usd;
-        c2[]="usd";
+        j=1;
         break;
         case 2:
         b=pou;
-        c2[]="pound";
         break;
         case 3:
         b=eur;
-        c2[]="euro";
         break;
         case 4:
         b=yuan;
-        c2[]="yuan";
         break;
         case 5:
         b=inr;
-        c2[]="inr";
         break;
         default:
         printf("wrong choice\n");
@@ -137,3 +136,7 @@ void cur_con()
      printf("EMI calculated!\n");
      printf("Rs.%f per month",emi);
 }
+void main()
+{
+    printf("****************************Financial Calculator*********************");
+    printf("/n/n/n");}
