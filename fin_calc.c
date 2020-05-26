@@ -69,7 +69,7 @@ void cur_con()
         break;
         case 2:
         a=pou;
-        &c1[]="pound";
+        c1[]="pound";
         break;
         case 3:
         a=eur;
@@ -113,19 +113,19 @@ void cur_con()
         printf("wrong choice\n");
         break;
     }
-    printf 
     rat=b/a;
+    float ia;
     printf("Enter the number of %s you want to convert to %s",c1,c2);
     scanf("%f",ia);
     ca=rat*ia;
     printf("%f %s = %f %s",ia,c1,ca,c2);
 }
-}
+
  void emi()
  {
      float p,r,n,emi;
      system("clear");
-     printf("-----------------EMI CALCULATOR----------------------\n";);
+     printf("-----------------EMI CALCULATOR----------------------\n");
      printf("Use this tool to verify your EMI installments\n");
      printf("Enter the loan amount");
      scanf("%f",&p);
@@ -133,7 +133,7 @@ void cur_con()
      scanf("%f",&r);
      printf("Enter the number of monthly installments \n ");
      scanf("%f",&n);
-     emi=(p*r*pow(((1+r),n))/(pow((1+r),n)-1);
+     emi=(p*r*pow((1+r),n))/(pow((1+r),n)-1);
      printf("EMI calculated!\n");
      printf("Rs.%f per month",emi);
 }
