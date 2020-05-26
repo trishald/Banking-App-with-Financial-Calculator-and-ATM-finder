@@ -81,7 +81,7 @@ void dijkstra(int G[MAX][MAX],int n,int startnode)
 		{
 			printf("\nDistance of node%d=%d",i,distance[i]);
 			printf("\nPath=%d",i);
-			
+			//.
 			j=i;
 			do
 			{
