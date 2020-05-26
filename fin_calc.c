@@ -2,14 +2,13 @@
 #include <stdlib.h>
 #include <string.h>
 #include <math.h>
-#include<system.h>
 #define usd 1
 #define inr 74.88
 #define eur 0.90
 #define pou 0.80
 #define yuan 7.10
 void gst(){
-    system(clear);
+    system("clear");
     float oc,ga,gr,np;//original cost, gst amount, gst rate, net price
     char o;//option
     int ch;//choice
@@ -45,10 +44,10 @@ if(ch==2)
 }
 void cur_con()
 {
-    int ch1,ch2
-    float a,b,rat,ca;//rat=ratio ca=converted amount
+    int ch1,ch2;
+    float a,b,rat,ca; //rat=ratio ca=converted amount
     char c1[10],c2[10];
-    system(clear);
+    system("clear");
     printf("                                       CURRENCY EXCHANGE CALCULATOR \n");
     printf("-------------------------------------------------------------------------------------------------------------");
     printf("This calculator helps you calculate how much (currency 1) is equal to (currency 2)\n");
@@ -63,12 +62,14 @@ void cur_con()
     switch(ch1)
     {
         case 1:
+        {
         a=usd;
         c1[]="usd";
+        }
         break;
         case 2:
         a=pou;
-        c1[]="pound";
+        &c1[]="pound";
         break;
         case 3:
         a=eur;
@@ -119,4 +120,20 @@ void cur_con()
     ca=rat*ia;
     printf("%f %s = %f %s",ia,c1,ca,c2);
 }
+}
+ void emi()
+ {
+     float p,r,n,emi;
+     system("clear");
+     printf("-----------------EMI CALCULATOR----------------------\n";);
+     printf("Use this tool to verify your EMI installments\n");
+     printf("Enter the loan amount");
+     scanf("%f",&p);
+     printf("Enter the rate of interest\n");
+     scanf("%f",&r);
+     printf("Enter the number of monthly installments \n ");
+     scanf("%f",&n);
+     emi=(p*r*pow(((1+r),n))/(pow((1+r),n)-1);
+     printf("EMI calculated!\n");
+     printf("Rs.%f per month",emi);
 }
