@@ -24,7 +24,7 @@ printf("---------------------------------------------------------------\n");
 printf("Enter the choice :  ");
 scanf("%d",&ch);
 printf("Enter the original cost:\n");
-scanf("%.1f",&oc);
+scanf("%f",&oc);
 printf("Enter the GST rate: \n (Note that the valid GST slab rates are 5, 12, 18 and 28) \n");
 scanf("%d",&gr);
 if(ch==1)
@@ -108,7 +108,7 @@ void cur_con()
     rat=b/a;
     float ia;
     printf("Enter the number of %s you want to convert to %s",cur[0][ch1-1],cur[0][ch2-1]);
-    scanf("%f",ia);
+    scanf("%f",&ia);
     ca=rat*ia;
     printf("%f %s = %f %s",ia,cur[0][ch1-1],ca,cur[0][ch2-1]);
 }
