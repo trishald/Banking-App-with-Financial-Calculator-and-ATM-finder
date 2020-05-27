@@ -137,8 +137,8 @@ void menu()
     printf("\n\n\n");
     printf("choose the calculator of your desired operation\n");
     printf("\t\t 1.GST calculator\n");
-    printf("\t\t EMI calculator\n");
-    printf("\t\t Currency convertor\n");
+    printf("\t\t 2.EMI calculator\n");
+    printf("\t\t 3.Currency convertor\n");
     printf("Enter your choice");
     scanf("%d",&ch);
     switch(ch)
