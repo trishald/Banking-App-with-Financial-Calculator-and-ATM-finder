@@ -107,10 +107,10 @@ void cur_con()
     }
     rat=b/a;
     float ia;
-    printf("Enter the number of %s you want to convert to %s",cur[0][ch1-1],cur[0][ch2-1]);
+    printf("Enter the number of %s you want to convert to %s",cur[ch1-1],cur[ch2-1]);
     scanf("%f",&ia);
     ca=rat*ia;
-    printf("%f %s = %f %s",ia,cur[0][ch1-1],ca,cur[0][ch2-1]);
+    printf("%f %s = %f %s",ia,cur[ch1-1],ca,cur[ch2-1]);
 }
 
  void emi()
