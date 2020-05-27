@@ -47,8 +47,7 @@ void cur_con()
 {
     int ch1,ch2;
     char cur[][10]={"USD","POUNDS","EUROS","YUAN","INR"};
-    int i,j;
-    float a,b,rat,ca; //rat=ratio ca=converted amount
+    float a=0,b=0,rat=0,ca=0; //rat=ratio ca=converted amount
     char c1[10],c2[10];
     system("clear");
     printf("                                       CURRENCY EXCHANGE CALCULATOR \n");
@@ -67,24 +66,19 @@ void cur_con()
         case 1:
         {
         a=usd;
-        i=1;
         }
         break;
         case 2:
         a=pou;
-        i=2;
         break;
         case 3:
         a=eur;
-        i=3;
         break;
         case 4:
         a=yuan;
-        i=4;
         break;
         case 5:
         a=inr;
-        i=5;
         break;
         default:
         printf("wrong choice\n");
@@ -94,7 +88,6 @@ void cur_con()
     {
         case 1:
         b=usd;
-        j=1;
         break;
         case 2:
         b=pou;
@@ -114,7 +107,7 @@ void cur_con()
     }
     rat=b/a;
     float ia;
-    printf("Enter the number of %s you want to convert to %s",c1,c2);
+    printf("Enter the number of %s you want to convert to %s",cur[0][ch1+1],cur[0][ch2+1]);
     scanf("%f",ia);
     ca=rat*ia;
     printf("%f %s = %f %s",ia,cur[0][ch1+1],ca,cur[0][ch2+1]);
@@ -141,7 +134,7 @@ void menu()
     int ch,ch3;
     system("clear");
     printf("****************************Financial Calculator*********************");
-    printf("/n/n/n");
+    printf("\n\n\n");
     printf("choose the calculator of your desired operation\n");
     printf("\t\t 1.GST calculator\n");
     printf("\t\t EMI calculator\n");
