@@ -25,7 +25,7 @@ printf("Enter the choice :  ");
 scanf("%d",&ch);
 printf("Enter the original cost:\n");
 scanf("%.1f",&oc);
-printf("Enter the GST rate: \n Note that the valid GST slab rates are 5, 12, 18 and 28 \n");
+printf("Enter the GST rate: \n (Note that the valid GST slab rates are 5, 12, 18 and 28) \n");
 scanf("%d",&gr);
 if(ch==1)
 {
