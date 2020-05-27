@@ -9,7 +9,7 @@
 #define yuan 7.10
 void gst(){
     system("clear");
-    float oc,ga,gr,np;//original cost, gst amount, gst rate, net price
+    float oc=0,ga=0,gr=0,np=0;//original cost, gst amount, gst rate, net price
     
     char o;//option
     int ch;//choice
@@ -107,10 +107,10 @@ void cur_con()
     }
     rat=b/a;
     float ia;
-    printf("Enter the number of %s you want to convert to %s",cur[ch1-1],cur[ch2-1]);
+    printf("Enter the number of %s you want to convert to %s\n",cur[ch1-1],cur[ch2-1]);
     scanf("%f",&ia);
     ca=rat*ia;
-    printf("%f %s = %f %s",ia,cur[ch1-1],ca,cur[ch2-1]);
+    printf("%f %s = %f %s\n",ia,cur[ch1-1],ca,cur[ch2-1]);
 }
 
  void emi()
@@ -123,9 +123,10 @@ void cur_con()
      scanf("%f",&p);
      printf("Enter the rate of interest\n");
      scanf("%f",&r);
+     r=r/1200;
      printf("Enter the number of monthly installments \n ");
      scanf("%f",&n);
-     emi=(p*r*pow((1+r),n))/(pow((1+r),n)-1);
+     emi=(p*r)*((pow((1+r),n))/(pow((1+r),n)-1));
      printf("EMI calculated!\n");
      printf("Rs.%f per month",emi);
 }
