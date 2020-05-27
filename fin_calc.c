@@ -9,7 +9,7 @@
 #define yuan 7.10
 void gst(){
     system("clear");
-    float oc=0,ga=0,gr=0,np=0;//original cost, gst amount, gst rate, net price
+    float oc=0,ga,gr=0,np=0;//original cost, gst amount, gst rate, net price
     
     char o;//option
     int ch;//choice
@@ -26,7 +26,7 @@ scanf("%d",&ch);
 printf("Enter the original cost:\n");
 scanf("%f",&oc);
 printf("Enter the GST rate: \n (Note that the valid GST slab rates are 5, 12, 18 and 28) \n");
-scanf("%d",&gr);
+scanf("%f",&gr);
 if(ch==1)
 {
     ga=(oc*gr)/100;
@@ -34,7 +34,7 @@ if(ch==1)
     printf("The GST amount is : %f \n",ga);
     printf("The net price is : %f \n",np);
 }
-if(ch==2)
+else if(ch==2)
 {
     ga=oc-(oc*(100/(100+gr)));
     np=oc-ga;
