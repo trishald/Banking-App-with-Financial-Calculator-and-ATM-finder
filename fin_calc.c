@@ -46,7 +46,7 @@ if(ch==2)
 void cur_con()
 {
     int ch1,ch2;
-    char cur[][5]={"USD","POUNDS","EUROS","YUAN","INR"};
+    char cur[][10]={"USD","POUNDS","EUROS","YUAN","INR"};
     int i,j;
     float a,b,rat,ca; //rat=ratio ca=converted amount
     char c1[10],c2[10];
@@ -117,7 +117,7 @@ void cur_con()
     printf("Enter the number of %s you want to convert to %s",c1,c2);
     scanf("%f",ia);
     ca=rat*ia;
-    printf("%f %s = %f %s",ia,c1,ca,c2);
+    printf("%f %s = %f %s",ia,cur[0][ch1+1],ca,cur[0][ch2+1]);
 }
 
  void emi()
@@ -136,7 +136,47 @@ void cur_con()
      printf("EMI calculated!\n");
      printf("Rs.%f per month",emi);
 }
+void menu()
+{
+    int ch,ch3;
+    system("clear");
+    printf("****************************Financial Calculator*********************");
+    printf("/n/n/n");
+    printf("choose the calculator of your desired operation\n");
+    printf("\t\t 1.GST calculator\n");
+    printf("\t\t EMI calculator\n");
+    printf("\t\t Currency convertor\n");
+    printf("Enter your choice");
+    scanf("%d",&ch);
+    switch(ch)
+    {
+        case 1:
+        gst();
+        break;
+        case 2:
+        emi();
+        break;
+        case 3:
+        cur_con();
+        break;
+        default:
+        printf("Wrong choice");
+        printf("Enter 1 to enter the choice again \n Press 2 to exit");
+        scanf("%d",&ch3);
+        if(ch3==1)
+        menu();
+        else
+        {
+            printf("Message: Invalid choice. Exiting...");
+            return;
+        }
+        
+        
+
+    }
+    
+}
 void main()
 {
-    printf("****************************Financial Calculator*********************");
-    printf("/n/n/n");}
+    menu();
+}
