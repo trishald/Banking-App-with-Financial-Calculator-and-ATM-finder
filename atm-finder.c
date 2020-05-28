@@ -1,32 +1,31 @@
-#include<stdio.h>
-#define INFINITY 9999
-#define MAX 10
- 
-void dijkstra(int G[MAX][MAX],int n,int startnode);
+#include<stdio.h> 
+void dijkstra(int G[5][5],int n,int sa);//where "sa" is selected area
  
 int main()
 {
-	int G[MAX][MAX],i,j,n,u;
-	printf("Enter no. of vertices:");
-	scanf("%d",&n);
-	printf("\nEnter the adjacency matrix:\n");
+	int i,j,n,u;
+	int G[5][5]={
+
+		{0,2,5,8,6},
+		{2,0,8,10,4},
+		{5,8,0,8,6},
+		{8,10,8,0,11},
+		{6,4,6,11,0}
+	};
 	
-	for(i=0;i<n;i++)
-		for(j=0;j<n;j++)
-			scanf("%d",&G[i][j]);
-	
-	printf("\nEnter the starting node:");
-	scanf("%d",&u);
+	printf("\nChoose your Area:\n");
+	printf("1. Jayanagar\n2. Basavanagudi\n3. JP Nagar\n4. Bommanahalli\n5. Banashankari");
+	scanf("%d",&u-1);
 	dijkstra(G,n,u);
 	
 	return 0;
 }
  
-void dijkstra(int G[MAX][MAX],int n,int startnode)
+void dijkstra(int G[5][5],int n,int startnode)
 {
  
-	int cost[MAX][MAX],distance[MAX],pred[MAX];
-	int visited[MAX],count,mindistance,nextnode,i,j;
+	int cost[5][5],distance[5],pred[5];
+	int visited[5],count,mindistance,nextnode,i,j;
 	
 	//pred[] stores the predecessor of each node
 	//count gives the number of nodes seen so far
@@ -34,7 +33,7 @@ void dijkstra(int G[MAX][MAX],int n,int startnode)
 	for(i=0;i<n;i++)
 		for(j=0;j<n;j++)
 			if(G[i][j]==0)
-				cost[i][j]=INFINITY;
+				cost[i][j]=0;
 			else
 				cost[i][j]=G[i][j];
 	
@@ -52,7 +51,7 @@ void dijkstra(int G[MAX][MAX],int n,int startnode)
 	
 	while(count<n-1)
 	{
-		mindistance=INFINITY;
+		mindistance=0;
 		
 		//nextnode gives the node at minimum distance
 		for(i=0;i<n;i++)
@@ -80,7 +79,7 @@ void dijkstra(int G[MAX][MAX],int n,int startnode)
 		{
 			printf("\nDistance of node%d=%d",i,distance[i]);
 			printf("\nPath=%d",i);
-			//.
+			
 			j=i;
 			do
 			{
