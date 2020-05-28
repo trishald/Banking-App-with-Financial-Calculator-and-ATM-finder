@@ -21,7 +21,7 @@ int main()
 	return 0;
 }
  
-void dijkstra(int G[5][5],int n,int startnode)
+void dijkstra(int G[5][5],int n,int sa)
 {
  
 	int cost[5][5],distance[5],pred[5];
@@ -40,13 +40,13 @@ void dijkstra(int G[5][5],int n,int startnode)
 	//initialize pred[],distance[] and visited[]
 	for(i=0;i<n;i++)
 	{
-		distance[i]=cost[startnode][i];
-		pred[i]=startnode;
+		distance[i]=cost[sa][i];
+		pred[i]=sa;
 		visited[i]=0;
 	}
 	
-	distance[startnode]=0;
-	visited[startnode]=1;
+	distance[sa]=0;
+	visited[sa]=1;
 	count=1;
 	
 	while(count<n-1)
@@ -75,7 +75,7 @@ void dijkstra(int G[5][5],int n,int startnode)
  
 	//print the path and distance of each node
 	for(i=0;i<n;i++)
-		if(i!=startnode)
+		if(i!=sa)
 		{
 			printf("\nDistance of node%d=%d",i,distance[i]);
 			printf("\nPath=%d",i);
@@ -85,6 +85,6 @@ void dijkstra(int G[5][5],int n,int startnode)
 			{
 				j=pred[j];
 				printf("<-%d",j);
-			}while(j!=startnode);
+			}while(j!=sa);
 	}
 }
