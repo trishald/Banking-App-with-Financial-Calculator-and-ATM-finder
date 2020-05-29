@@ -5,6 +5,8 @@
 void dijikstra(int G[MAX][MAX], int n, int startnode);
  
 void main(){
+	system("clear");
+	printf("::::::::::::::::ATM Locator::::::::::::::::::"\n\n\n);
 	int G[MAX][MAX]={{0,2,5,8,6},{2,0,8,10,4},{5,8,0,8,6},{8,10,8,0,11},{6,4,6,11,0}};
 	int i, j, n=5, u;
 	printf("Enter your area\n1. Jayanagar\n2. Basavanagudi\n3. JP Nagar\n4. Bommanahalli\n5. Banashankari\n");

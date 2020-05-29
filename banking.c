@@ -282,5 +282,7 @@ void push(float deposite)
   
   void main()
   {
+      system("clear");
+      printf("::::::::::::::::::::::::Banking Services::::::::::::::::::::");
       menu();
   }
