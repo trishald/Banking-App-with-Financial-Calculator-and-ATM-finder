@@ -9,26 +9,41 @@ void main(){
 	int i, j, n=5, u;
 	printf("Enter your area\n1. Jayanagar\n2. Basavanagudi\n3. JP Nagar\n4. Bommanahalli\n5. Banashankari\n");
 	scanf("%d", &u);
+	printf("The closest ATMs near you:\n");
 	switch(u)
 	{
-		case 1:
-		printf("The closest ATMs near you:\n");
+		case 4:
 		printf("In Bommanahalli:\n");
 		printf("->1&, 2, Begur Main Rd\n");
 		printf("->65/2a, Devarachikkanahalli Main Rd\n");
 		break;
 		case 2:
-		printf("The closest ATMs near you:\n");
-		printf("In Basavanagudi");
+		printf("In Basavanagudi:\n");
 		printf("->198, Gandhi Bazar Main Rd, Gandhi Bazaar\n");
-		printf("")
-
-
-	}
+		printf("->29/1, MN Krishna Rao Rd\n");
+		break;
+		case 3:
+		printf("In JP Nagar\n");
+		printf("->33, 100 Feet Ring Road, 18th Main, 15t Cross, Near-VET Polytechnic, J P Nagar 2nd Phase\n");
+		printf("->15th Cross, Near-Union Bank, J P Nagar 6th Phase\n");
+		break;
+		case 1:
+		printf("In Jayanagar\n");
+		printf("->Jayanagar Shopping Complex, 27th A Cross Rd, 4th T Block East, 4th Block\n");
+		printf("->129, 16th Main, 4th Block, 16th Main Rd, 4th T Block East, Pattabhirama Nagar\n");
+		break;
+		case 5:
+		printf("In Banashankari:\n");
+		printf("->Shop No.121, 2nd Stage\n");
+		printf("->242, 27th Cross Rd, Siddanna Layout, Banashankari Stage II\n");
+		break;
+		default:
+		printf("Invalid choice\n Try again\n");
+		break;
+}
 	dijikstra(G,n,u-1);
 
 }
- 
 void dijikstra(int G[MAX][MAX], int n, int startnode)
 {
 	int cost[MAX][MAX], distance[MAX], pred[MAX];
@@ -68,17 +83,46 @@ void dijikstra(int G[MAX][MAX], int n, int startnode)
 			count++;
 	}
  
-	for(i=0;i < n;i++)
-		if(i!=startnode)
+	for(i=0;i< 3;i++)
+	{
+		if(distance[i]>distance[i+1])
+		continue;
+		else if(distance[i]<distance[i+1])
 		{
-			printf("\nDistance of %d = %d", i, distance[i]);
-			printf("\nPath = %d", i);
-			j=i;
-			do
-			{
-				j=pred[j];
-				printf(" <-%d", j);
-			}
-			while(j!=startnode);
+		printf("\n\n\nThe next closest ATMs are %d KMs away\n",distance[i]);
+		switch(i)
+	{
+		case 4:
+		printf("In Bommanahalli:\n");
+		printf("->1&, 2, Begur Main Rd\n");
+		printf("->65/2a, Devarachikkanahalli Main Rd\n");
+		break;
+		case 2:
+		printf("In Basavanagudi:\n");
+		printf("->198, Gandhi Bazar Main Rd, Gandhi Bazaar\n");
+		printf("->29/1, MN Krishna Rao Rd\n");
+		break;
+		case 3:
+		printf("In JP Nagar:\n");
+		printf("->33, 100 Feet Ring Road, 18th Main, 15t Cross, Near-VET Polytechnic, J P Nagar 2nd Phase\n");
+		printf("->15th Cross, Near-Union Bank, J P Nagar 6th Phase\n");
+		break;
+		case 1:
+		printf("In Jayanagar:\n");
+		printf("->Jayanagar Shopping Complex, 27th A Cross Rd, 4th T Block East, 4th Block\n");
+		printf("->129, 16th Main, 4th Block, 16th Main Rd, 4th T Block East, Pattabhirama Nagar\n");
+		break;
+		case 5:
+		printf("In Banashankari:\n");
+		printf("->Shop No.121, 2nd Stage\n");
+		printf("->242, 27th Cross Rd, Siddanna Layout, Banashankari Stage II\n");
+		break;
+		default:
+		printf("Invalid choice\n Try again\n");
+		break;
+}
 		}
+	
+	}		
+
 }
