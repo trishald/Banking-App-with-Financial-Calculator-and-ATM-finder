@@ -15,8 +15,8 @@ int main()
 	
 	printf("\nChoose your Area:\n");
 	printf("1. Jayanagar\n2. Basavanagudi\n3. JP Nagar\n4. Bommanahalli\n5. Banashankari");
-	scanf("%d",&u-1);
-	dijkstra(G,n,u);
+	scanf("%d",&u);
+	dijkstra(G,n,u-1);
 	
 	return 0;
 }
