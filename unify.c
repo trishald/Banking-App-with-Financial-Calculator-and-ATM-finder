@@ -1,7 +1,7 @@
 #include<stdio.h>
 void main()
 {
-    int ch,ch1;
+    int ch,ch1,e;
 system("clear");
 printf("-------------Welcome to ABC Bank-----------\n");
 printf("Banking, financial calculators and Nearest ATM locator at one place\n");
@@ -15,20 +15,24 @@ switch(ch)
 {
     case 1:
     system("clear");
-    printf("Please wait, loading....");
     system("gcc banking.c -o bank && ./bank");
     break;
     case 2:
     system("clear");
-    printf("Please wait, loading...");
-    system("gcc fin_calc.c -o f && ./f");
+    system("gcc fin_calc.c -o f -lm && ./f");
     break;
     case 3:
     system("clear");
-    printf("please wait, loading...");
     system("gcc atm-finder.c -o a && ./a");
+    break;
+    default:
+    printf("wrong choice!\nPress any key to continue\n");
+    scanf("%d",&e);
+    if(e!=678)
+    main();
+
 }
-printf("Press 1 to use the services again\n Press 2 to exit\n");
+printf("\n\n\nPress 1 to use the services again\n Press 2 to exit\n");
 printf("Enter Choice; ");
 scanf("%d",&ch1);
 if(ch1==1)

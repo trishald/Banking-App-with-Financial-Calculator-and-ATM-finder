@@ -6,7 +6,7 @@ void dijikstra(int G[MAX][MAX], int n, int startnode);
  
 void main(){
 	system("clear");
-	printf("::::::::::::::::ATM Locator::::::::::::::::::"\n\n\n);
+	printf("::::::::::::::::ATM Locator::::::::::::::::::\n\n\n");
 	int G[MAX][MAX]={{0,2,5,8,6},{2,0,8,10,4},{5,8,0,8,6},{8,10,8,0,11},{6,4,6,11,0}};
 	int i, j, n=5, u;
 	printf("Enter your area\n1. Jayanagar\n2. Basavanagudi\n3. JP Nagar\n4. Bommanahalli\n5. Banashankari\n");
@@ -85,14 +85,14 @@ void dijikstra(int G[MAX][MAX], int n, int startnode)
 			count++;
 	}
  
-	for(i=0;i< 3;i++)
+	for(i=0;i< 1;i++)
 	{
-		if(distance[i]>distance[i+1])
+		if(distance[i]==0)
 		continue;
-		else if(distance[i]<distance[i+1])
-		{
+	
 		printf("\n\n\nThe next closest ATMs are %d KMs away\n",distance[i]);
-		switch(i)
+		
+		switch(i+1)
 	{
 		case 4:
 		printf("In Bommanahalli:\n");
@@ -119,12 +119,9 @@ void dijikstra(int G[MAX][MAX], int n, int startnode)
 		printf("->Shop No.121, 2nd Stage\n");
 		printf("->242, 27th Cross Rd, Siddanna Layout, Banashankari Stage II\n");
 		break;
-		default:
-		printf("Invalid choice\n Try again\n");
-		break;
+	
 }
 		}
 	
 	}		
 
-}
