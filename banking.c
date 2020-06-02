@@ -26,6 +26,7 @@ char q;
 
 int menu()
 {
+  system("clear");
   int ch1;
   printf("\nPress '1' if you are a new customer \nPress '2' if you're a registered customer\n");
   scanf("%d",&ch1);
@@ -49,7 +50,7 @@ int menu()
 
 void new_cust()
 {
- 
+  system("clear");
   printf("\nEnter your name:\n");
   scanf("%s",c1[i].name);
   printf("Enter your 4-digit A/C number:\n");
@@ -61,6 +62,7 @@ void new_cust()
 
 void reg_cust()
 {
+    system("clear");
   printf("\nenter the 4-digit account number\n");
   scanf("%d",&ac);
   if (search(ac)==1)
@@ -70,7 +72,7 @@ void reg_cust()
 }
 int search(int ac)
 {
-
+system("clear");
   int up=i-1; //upperbound
   int lb=0; //lowerbound
   while(lb<=up)
@@ -94,7 +96,7 @@ int search(int ac)
   }
   if(flag>=0)
   {
-    printf("\nAccess granted!\n");
+    printf("\naccount found\n");
     return 1;
     a=pos;
   }
@@ -112,6 +114,7 @@ int search(int ac)
 
 int auth()
 {
+    system("clear");
   int f=0;
   while(f<3)
   {
@@ -138,11 +141,11 @@ int auth()
   int var_menu()
 {
     
-  
+  system("clear");
     int ch2;
     do
     {
-      printf("\nEnter '1' to withdraw money    Enter '2' To deposit money\nEnter '3' To check the balnce of your account    Enter '4' To change PIN\n Enter '5' To check the detailes of the account holder    Enter '6' To go to the previous menu\nEnter '7' to EXIT");
+      printf("\nEnter '1' to withdraw money\nEnter '2' To deposit money\nEnter '3' To check the balnce of your account\nEnter '4' To change PIN\n Enter '5' To check the detailes of the account holder\nEnter '6' To go to the previous menu\nEnter '7' to EXIT\n");
      scanf("%d",&ch2);
      switch(ch2)
      {
@@ -154,7 +157,7 @@ int auth()
       break;
 
       case 2:
-      printf("\nenter the amount to be deposited:");
+      printf("\nenter the amount to be deposited:\n");
       scanf("%f",&deposite);
       push(deposite);
       
@@ -169,17 +172,17 @@ int auth()
       q=pin_change(opin);
       if(q==1)
       {
-        printf("\nThe PIN was successfully changed");
+        printf("\nThe PIN was successfully changed\n");
       }
       
       break;
       
       case 5:
-      printf("enter the account number");
+      printf("\nenter the account number\n");
       scanf("%d",&ac);
       search(ac);
-      printf("the name of the account holder is\n%s",c1[a].name);
-      printf("the account number is\n%d",ac);
+      printf("\nthe name of the account holder is\n%s",c1[a].name);
+      printf("\nthe account number is\n%d",ac);
       break;
      
       case 6:
@@ -197,75 +200,56 @@ int auth()
 
   char pin_change(int cpin)
     {
-  
+  system("clear");
     int cdpin;
-    printf("\nEnter the 4-digit account number");
+    printf("\nEnter the 4-digit account number\n");
     scanf("%d",&ac);
     search(ac);
-     printf("\nEnter the old PIN:");
+     printf("\nEnter the old PIN:\n");
      scanf("\n%d",&opin);
     
     if(c1[a].pin==cpin)
     {
-      printf("\nEnter the NEW PIN ");
+      printf("\nEnter the NEW PIN\n ");
       scanf("%d",&npin);
       c1[a].pin=npin;
       return 1;
     }
     else
     {
-      printf("\nEntered PIN is INCORRECT");
-      printf("\nEnter the PIN");
-      scanf("%d",&cdpin);
+      printf("\nEntered PIN is INCORRECT\n");
+      printf("\nEnter the PIN\n");
+      scanf("%d\n",&cdpin);
       pin_change(cdpin);
     }
   }
 
-void push(float deposite)
-  {
-    top++;
-    if(top=0)
+void push(float deposit)
+{
+    system("clear");
+    acc[top]+=deposite;
+    printf("\nthe account balance after the transaction is %f\n",acc[top]);
+}
+
+void pop(float deposite)
+{
+    system("clear");
+    if(acc[top]<deposite)
     {
-      acc[top]=deposite;
+        printf("\nthere isn't sufficient Balance in your account\n");
     }
     else
     {
-      sum=acc[top];
-      deposite=deposite+sum;
-      acc[top]=deposite;
-      
+        acc[top]-=deposite;
+        printf("\nthe account balance after the transaction if %f\n",acc[top]);
     }
-    printf("\nThe balnce after the trancation is %f",acc[top]);
-  }
-  
- void push_withdraw(float deposite)
-  {
-    top++;
-    acc[top]=deposite;
-    printf("\nThe balnce after the trancation is %f",acc[top]);
-  }
-
-  void pop(float withdraw)
-  {
-    sub=acc[top];
-    if(withdraw>sub)
-    {
-      printf("\nThere isn't enough balance in your account");
-    }
-
-    else
-    {
-        withdraw=sub-withdraw;
-        push_withdraw(withdraw);
-    }
-    
-  }
-  
+}
 
 
 
   void peek(int x)
   {
+      system("clear");
     if(x==1)
     {
       printf("\nThe Account Balance is %f",acc[top]);
@@ -283,6 +267,5 @@ void push(float deposite)
   void main()
   {
       system("clear");
-      printf("::::::::::::::::::::::::Banking Services::::::::::::::::::::");
       menu();
   }
