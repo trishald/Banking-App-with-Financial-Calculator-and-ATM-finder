@@ -114,7 +114,7 @@ system("clear");
 
 int auth()
 {
-    system("clear");
+    
   int f=0;
   while(f<3)
   {
